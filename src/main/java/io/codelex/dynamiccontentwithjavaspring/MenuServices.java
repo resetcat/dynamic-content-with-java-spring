@@ -9,7 +9,6 @@ import java.util.Random;
 
 @Service
 public class MenuServices {
-
     int count;
     Random random = new Random();
 

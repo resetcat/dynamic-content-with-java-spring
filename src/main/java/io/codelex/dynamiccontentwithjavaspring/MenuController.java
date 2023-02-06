@@ -13,9 +13,8 @@ public class MenuController {
         this.menuServices = menuServices;
     }
 
-
     @GetMapping("/menu1")
-    public ModelAndView menu1(Model model) {
+    public ModelAndView getMenu1(Model model) {
         String time = menuServices.getTime();
         String date = menuServices.getDate();
         model.addAttribute("time", time);
@@ -24,7 +23,7 @@ public class MenuController {
     }
 
     @GetMapping("/menu2")
-    public ModelAndView menu2(Model model) {
+    public ModelAndView getMenu2(Model model) {
         int randomInt = menuServices.getRandomInt();
         int count = menuServices.getCount();
         model.addAttribute("randomInt", randomInt);
