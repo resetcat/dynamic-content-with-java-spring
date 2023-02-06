@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <title>Menus</title>
+</head>
+
+<body>
+
+<button class="button" id="menu1Button">Menu 1</button>
+<button class="button" id="menu2Button">Menu 2</button>
+<div id="content"></div>
+
+<script>
+    $(document).ready(function () {
+        $("#menu1Button").click(function () {
+            $.ajax({
+                url: "/menu1",
+                success: function (data) {
+                    $("#content").html(data);
+                }
+            });
+        });
+
+        $("#menu2Button").click(function () {
+            $.ajax({
+                url: "/menu2",
+                success: function (data) {
+                    $("#content").html(data);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
